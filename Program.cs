@@ -1,3 +1,8 @@
+using Tasks;
+using Tasks.Interfaces;
+using Tasks.Controllers;
+using Tasks.Utilities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,7 +11,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.addITask();
 
+// var config=builder.configuration;
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -23,3 +30,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+

@@ -1,10 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
+using Tasks.Interfaces;
 
 namespace Tasks.Controllers;
 [ApiController]
     [Route("[controller]")]
     public class TaskController : ControllerBase
     {
+        ITaskHttp TaskService;
+        public TaskController(ITaskHttp taskService){
+            this.TaskService=taskService;
+        }
         [HttpGet]
         public IEnumerable<Task> Get()
         {
