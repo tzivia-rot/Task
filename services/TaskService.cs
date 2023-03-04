@@ -2,19 +2,33 @@ using Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using Tasks.Interfaces;
-
+using System.Text.Json;
 
 namespace Tasks.Controllers
 {   
     public  class TaskService: ITaskHttp
     {    
-        private List<Task> tasks = new List<Task>
-        {
-            new Task { Name="hw",Id=1, Done = false},
-            new Task { Name="clean",Id=2, Done = true},
-            new Task { Name="learn",Id=3, Done = false},
-        };
+        private List<Task> tasks = new List<Task>();
+         private IWebHostEnvironment  webHost;
+        private string filePath;
 
+        public TaskService(IWebHostEnvironment webHost){
+            this.webHost = webHost;
+            this.filePath = Path.Combine(webHost.ContentRootPath, "Data", "data.json");
+            //this.filePath = webHost.ContentRootPath+@"/Data/Pizza.json";
+            using (var jsonFile = File.OpenText(filePath))
+            {
+                tasks = JsonSerializer.Deserialize<List<Task>>(jsonFile.ReadToEnd(),
+                new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+            }
+        }
+        private void saveToFile()
+        {
+            File.WriteAllText(filePath, JsonSerializer.Serialize(tasks));
+        }
         public  List<Task> GetAll() => tasks;
         public  Task Get(int id)
         {
@@ -28,6 +42,7 @@ namespace Tasks.Controllers
         {
             task.Id = tasks.Max(t => t.Id) + 1;
             tasks.Add(task);
+            saveToFile();
         }
 
         public  bool Update(int id, Task newTask)
@@ -39,6 +54,7 @@ namespace Tasks.Controllers
                 return false;
             task.Name = newTask.Name;
             task.Done = newTask.Done;
+             saveToFile();
             return true;
         }
 
@@ -48,6 +64,7 @@ namespace Tasks.Controllers
             if (task == null)
                 return false;
             tasks.Remove(task);
+            saveToFile();
             return true;
         }
     }

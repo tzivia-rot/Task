@@ -1,11 +1,71 @@
 {
   "Version": 1,
-  "Hash": "sh+2mJxB15y8jhIyVP/T9gjzNnBJmMD6K+FATwNUK1E=",
+  "Hash": "RuvtTk5I0SaV7komypqPhOfMwe/GYF2k6lDLiNpfj2A=",
   "Source": "Tasks",
   "BasePath": "_content/Tasks",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Tasks\\wwwroot",
+      "Source": "Tasks",
+      "ContentRoot": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\",
+      "BasePath": "_content/Tasks",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\index.html",
+      "SourceId": "Tasks",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\",
+      "BasePath": "_content/Tasks",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\site.css",
+      "SourceId": "Tasks",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\",
+      "BasePath": "_content/Tasks",
+      "RelativePath": "site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\site.css"
+    },
+    {
+      "Identity": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\site.js",
+      "SourceId": "Tasks",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\",
+      "BasePath": "_content/Tasks",
+      "RelativePath": "site.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\site.js"
+    }
+  ]
 }

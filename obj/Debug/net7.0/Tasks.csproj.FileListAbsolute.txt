@@ -64,3 +64,5 @@ D:\צביה\יד\core\Tasks\obj\Debug\net7.0\refint\Tasks.dll
 D:\צביה\יד\core\Tasks\obj\Debug\net7.0\Tasks.pdb
 D:\צביה\יד\core\Tasks\obj\Debug\net7.0\Tasks.genruntimeconfig.cache
 D:\צביה\יד\core\Tasks\obj\Debug\net7.0\ref\Tasks.dll
+D:\צביה\יד\core\Tasks\bin\Debug\net7.0\Tasks.staticwebassets.runtime.json
+D:\צביה\יד\core\Tasks\bin\Debug\net7.0\data\data.json
