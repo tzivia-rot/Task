@@ -1,8 +1,12 @@
-const uri = '/task';
+const uriTask = '/task';
 let tasks = [];
+const token= sessionStorage.getItem('token');
+
+
+
 
 function getItems() {
-    fetch(uri)
+    fetch(uriTask)
         .then(response => response.json())
         .then(data => _displayItems(data))
         .catch(error => console.error('Unable to get items.', error));
@@ -16,7 +20,7 @@ function addItem() {
         name: addNameTextbox.value.trim()
     };
 
-    fetch(uri, {
+    fetch(uriTask, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -33,7 +37,7 @@ function addItem() {
 }
 
 function deleteItem(id) {
-    fetch(`${uri}/${id}`, {
+    fetch(`${uriTask}/${id}`, {
             method: 'DELETE'
         })
         .then(() => getItems())
@@ -59,7 +63,7 @@ function updateItem() {
         name: document.getElementById('edit-name').value.trim()
     };
 
-    fetch(`${uri}/${itemId}`, {
+    fetch(`${uriTask}/${itemId}`, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',

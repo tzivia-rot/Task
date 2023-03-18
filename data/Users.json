@@ -1,0 +1,19 @@
+[
+    {"UserId":200,
+    "UserName":"Rachel"
+    ,"Password":"2222222"
+    ,"IsAdmin":true}
+ 
+    ,{"UserId":301
+    ,"UserName":"Dvora"
+    ,"Password":"9999999"
+    ,"IsAdmin":true}
+    ,{"UserId":100
+    ,"UserName":"Tzivia"
+    ,"Password":"1111111"
+    ,"IsAdmin":false}
+    ,{"UserId":300,
+    "UserName":"chevi"
+    ,"Password":"3333333",
+    "IsAdmin":true}
+]

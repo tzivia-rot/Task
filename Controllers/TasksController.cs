@@ -1,23 +1,32 @@
 using Microsoft.AspNetCore.Mvc;
 using Tasks.Interfaces;
+using System.Security.Claims;
+using System.Text;
+using Microsoft.AspNetCore.Authorization;
+using Tasks.model;
 
 namespace Tasks.Controllers;
 [ApiController]
     [Route("[controller]")]
     public class TaskController : ControllerBase
     {
-        ITaskHttp TaskService;
+       private ITaskHttp TaskService;
         public TaskController(ITaskHttp taskService){
             this.TaskService=taskService;
         }
         [HttpGet]
-        public IEnumerable<Task> Get()
+        [Authorize(Policy = "User")]
+        public IEnumerable<model.Task> Get()
         {
-            return TaskService.GetAll();
+
+            string token=Request.Headers.Authorization;
+            
+            return TaskService.GetAll(token);
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Task> Get(int id)
+          [Authorize(Policy = "User")]
+        public ActionResult<model.Task> Get(int id)
         {
             var p = TaskService.Get(id);
             if (p == null)
@@ -26,14 +35,16 @@ namespace Tasks.Controllers;
         }
 
         [HttpPost]
-        public ActionResult Post(Task task)
+          [Authorize(Policy = "User")]
+        public ActionResult Post(model.Task task)
         {
             TaskService.Add(task);
             return CreatedAtAction(nameof(Post), new { id = task.Id }, task);
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(int id, Task task)
+        [Authorize(Policy = "User")]
+        public ActionResult Put(int id, model.Task task)
         {
             if (! TaskService.Update(id, task))
                 return BadRequest();
@@ -41,6 +52,7 @@ namespace Tasks.Controllers;
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Policy = "User")]
         public ActionResult Delete (int id)
         {
             if (! TaskService.Delete(id))

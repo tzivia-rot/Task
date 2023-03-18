@@ -66,3 +66,11 @@ D:\צביה\יד\core\Tasks\obj\Debug\net7.0\Tasks.genruntimeconfig.cache
 D:\צביה\יד\core\Tasks\obj\Debug\net7.0\ref\Tasks.dll
 D:\צביה\יד\core\Tasks\bin\Debug\net7.0\Tasks.staticwebassets.runtime.json
 D:\צביה\יד\core\Tasks\bin\Debug\net7.0\data\data.json
+D:\צביה\יד\core\Tasks\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\צביה\יד\core\Tasks\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\צביה\יד\core\Tasks\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+D:\צביה\יד\core\Tasks\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+D:\צביה\יד\core\Tasks\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\צביה\יד\core\Tasks\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+D:\צביה\יד\core\Tasks\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\צביה\יד\core\Tasks\bin\Debug\net7.0\data\Users.json

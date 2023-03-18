@@ -1,15 +1,15 @@
-using Tasks;
-using System.Collections.Generic;
-using System.Linq;
+
 using Tasks.Interfaces;
 using System.Text.Json;
+using Tasks.model;
+using System.IdentityModel.Tokens.Jwt;
 
-namespace Tasks.Controllers
+namespace Tasks.service
 {   
     public  class TaskService: ITaskHttp
     {    
-        private List<Task> tasks = new List<Task>();
-         private IWebHostEnvironment  webHost;
+        private List<model.Task> tasks = new List<model.Task>();
+        private IWebHostEnvironment  webHost;
         private string filePath;
 
         public TaskService(IWebHostEnvironment webHost){
@@ -18,7 +18,7 @@ namespace Tasks.Controllers
             //this.filePath = webHost.ContentRootPath+@"/Data/Pizza.json";
             using (var jsonFile = File.OpenText(filePath))
             {
-                tasks = JsonSerializer.Deserialize<List<Task>>(jsonFile.ReadToEnd(),
+                tasks = JsonSerializer.Deserialize<List<model.Task>>(jsonFile.ReadToEnd(),
                 new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
@@ -29,8 +29,22 @@ namespace Tasks.Controllers
         {
             File.WriteAllText(filePath, JsonSerializer.Serialize(tasks));
         }
-        public  List<Task> GetAll() => tasks;
-        public  Task Get(int id)
+        public  List<model.Task> GetAll(string tokenStr) {
+            List<model.Task> tasksForUser = new List<model.Task>();
+           string newToken=tokenStr.Split(' ')[1];
+             var token = new JwtSecurityToken(jwtEncodedString: newToken);
+            string id = token.Claims.First(c => c.Type == "id").Value;
+            foreach (model.Task item in this.tasks)
+            {
+                if(item.UserId.ToString()==id){
+                    tasksForUser.Add(item);
+                }
+
+
+            }
+            return tasksForUser;
+        }
+        public  model.Task Get(int id)
         {
             var task = tasks.FirstOrDefault(t => t.Id == id);
             if (task == null)
@@ -38,14 +52,14 @@ namespace Tasks.Controllers
             return task;
         }
 
-        public  void Add(Task task)
+        public  void Add(model.Task task)
         {
             task.Id = tasks.Max(t => t.Id) + 1;
             tasks.Add(task);
             saveToFile();
         }
 
-        public  bool Update(int id, Task newTask)
+        public  bool Update(int id, model.Task newTask)
         {
             if (newTask.Id != id)
                 return false;
