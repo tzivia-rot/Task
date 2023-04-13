@@ -8,6 +8,7 @@ public static class Helper{
     public static void addITask(this IServiceCollection services){
         services.AddSingleton<ITaskHttp,TaskService>();
         services.AddSingleton<IUserHttp,UserService>();
+        services.AddTransient<ILog,LogService>();
     }
 }
 }

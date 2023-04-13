@@ -1,11 +1,9 @@
-using Tasks;
-using Tasks.Interfaces;
-using Tasks.Controllers;
+
 using Tasks.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Tasks.service;
 using Microsoft.OpenApi.Models;
-
+using Tasks.Middleware;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -32,7 +30,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.addITask();
 builder.Services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "FBI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Tasks", Version = "v1" });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,
@@ -52,6 +50,7 @@ builder.Services.AddSwaggerGen(c =>
 builder.Services.AddSwaggerGen();
 // var config=builder.configuration;
 var app = builder.Build();
+app.UseLogMiddleware();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

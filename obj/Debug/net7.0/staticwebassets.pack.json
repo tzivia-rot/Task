@@ -5,16 +5,20 @@
       "PackagePath": "staticwebassets\\admin.html"
     },
     {
+      "Id": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\admin.js",
+      "PackagePath": "staticwebassets\\admin.js"
+    },
+    {
       "Id": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\site.css",
-      "PackagePath": "staticwebassets\\site.css"
+      "Id": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\login.js",
+      "PackagePath": "staticwebassets\\login.js"
     },
     {
-      "Id": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\site.js",
-      "PackagePath": "staticwebassets\\site.js"
+      "Id": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\site.css",
+      "PackagePath": "staticwebassets\\site.css"
     },
     {
       "Id": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\user.html",

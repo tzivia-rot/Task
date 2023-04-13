@@ -37,7 +37,7 @@ namespace Tasks.Controllers
                 claims.Add(new Claim("type", "User"));
             }
             claims.Add(new Claim("id",User.UserId.ToString()));
-            claims.Add(new Claim("id",User.UserId.ToString()));
+            claims.Add(new Claim("name",User.UserName.ToString()));
             var token = UserTokenService.GetToken(claims);
             
             return new OkObjectResult(UserTokenService.WriteToken(token));

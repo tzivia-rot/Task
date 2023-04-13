@@ -40,7 +40,7 @@ namespace Tasks.service;
         return null;
     }
      public  List<User> GetAll() => users;
-        public  void Add(User user)
+    public  void Add(User user)
     {
         user.UserId = users.Max(t => t.UserId) + 1;
         users.Add(user);

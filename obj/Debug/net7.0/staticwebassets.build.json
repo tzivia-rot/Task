@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EBJ2rCYhuw/YfuGht5W1OjDVs9iOvKj9L5xN9IAPuK8=",
+  "Hash": "D1RMVbm9yxJhNwo97bwVhNlu6rQV9HyDPH+eG4zf7LM=",
   "Source": "Tasks",
   "BasePath": "_content/Tasks",
   "Mode": "Default",
@@ -34,6 +34,23 @@
       "OriginalItemSpec": "wwwroot\\admin.html"
     },
     {
+      "Identity": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\admin.js",
+      "SourceId": "Tasks",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\",
+      "BasePath": "_content/Tasks",
+      "RelativePath": "admin.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin.js"
+    },
+    {
       "Identity": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\index.html",
       "SourceId": "Tasks",
       "SourceType": "Discovered",
@@ -51,6 +68,23 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
+      "Identity": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\login.js",
+      "SourceId": "Tasks",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\",
+      "BasePath": "_content/Tasks",
+      "RelativePath": "login.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\login.js"
+    },
+    {
       "Identity": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\site.css",
       "SourceId": "Tasks",
       "SourceType": "Discovered",
@@ -66,23 +100,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\site.css"
-    },
-    {
-      "Identity": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\site.js",
-      "SourceId": "Tasks",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\",
-      "BasePath": "_content/Tasks",
-      "RelativePath": "site.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\site.js"
     },
     {
       "Identity": "D:\\צביה\\יד\\core\\Tasks\\wwwroot\\user.html",

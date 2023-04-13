@@ -55,6 +55,7 @@ namespace Tasks.service
         public  void Add(model.Task task)
         {
             task.Id = tasks.Max(t => t.Id) + 1;
+        
             tasks.Add(task);
             saveToFile();
         }
